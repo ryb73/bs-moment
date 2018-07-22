@@ -299,6 +299,8 @@ external momentWithFormats: (string, list(string)) => Moment.t = "moment";
 
 [@bs.module] external momentWithComponents: list(int) => Moment.t = "moment";
 
+[@bs.module "moment"] external momentUtc : unit => Moment.t = "utc";
+
 let momentWithUnix = (timestamp: int) =>
   momentWithTimestampMS(float_of_int(timestamp) *. 1000.0);
 

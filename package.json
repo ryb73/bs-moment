@@ -14,19 +14,20 @@
     "time"
   ],
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world",
+    "build": "npm run clean && bsb -make-world",
+    "start": "npm run watch",
+    "watch": "npm run clean && bsb -make-world -w",
+    "clean": "rm -rf lib/ && bsb -clean-world",
     "pretest": "yarn run build",
     "test": "jest",
     "prepublish": "yarn run clean && yarn run build"
   },
   "peerDependencies": {
+    "bs-platform": "^4.0.5",
     "moment": "^2.20.1"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.3",
-    "bs-platform": "^4.0.5",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "moment": "^2.22.2"
