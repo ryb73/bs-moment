@@ -66,3 +66,6 @@ typings/
 lib/
 .merlin
 .bsb.lock
+
+# persistent package linker
+package-links.json
